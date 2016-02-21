@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BrokerDBModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="BrokerDBEntities" p1:LazyLoadingEnabled="true">
+    <FunctionImport Name="Get_Active_Brokers_Find_An_AgentAddress" ReturnType="Collection(BrokerDBModel.Get_Active_Brokers_Find_An_AgentAddress_Result)" />
+    <FunctionImport Name="AgentAddress" ReturnType="Collection(BrokerDBModel.AgentAddress_Result)" />
+    <EntitySet Name="States" EntityType="BrokerDBModel.State" />
+  </EntityContainer>
+  <ComplexType Name="Get_Active_Brokers_Find_An_AgentAddress_Result">
+    <Property Type="String" Name="AgencyID" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="AgencyName" Nullable="true" />
+    <Property Type="String" Name="Street1" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Street2" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="City" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="STATE" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Zip" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Zip4" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="12" />
+  </ComplexType>
+  <ComplexType Name="AgentAddress_Result">
+    <Property Type="String" Name="AgencyID" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="AgencyName" Nullable="true" />
+    <Property Type="String" Name="Street1" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Street2" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="City" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="STATE" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Zip" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Zip4" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="12" />
+  </ComplexType>
+  <EntityType Name="State">
+    <Key>
+      <PropertyRef Name="StateCode" />
+    </Key>
+    <Property Type="String" Name="StateCode" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="StateName" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>
