@@ -13,6 +13,7 @@ namespace GoogleMaps.Controllers.Home
         public ActionResult Index()
         {
             PopulateStates();
+            var test = "test";
             return View();
         }
         /// <summary>
